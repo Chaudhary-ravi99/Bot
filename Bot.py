@@ -21,8 +21,11 @@ def start(message):
 @bot.callback_query_handler(func=lambda call: call.data == "project_button")
 def project_button_callback(call):
     updated_keyboard = types.InlineKeyboardMarkup()
+    
     updated_keyboard.row(types.InlineKeyboardButton("🧬 Eɴᴛɪᴛʏ Aʟʟ Bʟᴏᴄᴋ", url="https://t.me/freefirecraftlandgroup/146275"),
-                types.InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="back_button"))
+                types.InlineKeyboardButton("🔥 Aʟʟ Bʟᴏᴄᴋs", url="https://youtu.be/2C6DFikY0Bw?si=pZAEvYitBJQsYFZJ"))
+                
+    updated_keyboard.row(types.InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="back_button"))
     
     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                           text="🔗 Hᴇʀᴇ Aʀᴇ Sᴏᴍᴇ ʟɪɴᴋs:", reply_markup=updated_keyboard)
