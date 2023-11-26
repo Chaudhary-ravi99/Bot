@@ -17,7 +17,8 @@ def start(message):
     keyboard.row(project_button)
 
     bot.send_message(message.chat.id, '🔗 Hᴇʀᴇ Aʀᴇ Sᴏᴍᴇ ʟɪɴᴋs:', reply_markup=keyboard)
-
+    bot.delete_message(chat_id=message.chat.id, message_id=message.message_id)
+    
 @bot.callback_query_handler(func=lambda call: call.data == "project_button")
 def project_button_callback(call):
     updated_keyboard = types.InlineKeyboardMarkup()
@@ -47,8 +48,9 @@ def back_button_callback(call):
 
 
 
-@bot.message_handler(func=lambda message: True, content_types=['text'])
+@bot.message_handler(func=lambda message: message.text != "/start", content_types=['text'])
 def handle_unknown(message):
-    bot.send_message(message.chat.id, "Uɴᴋɴᴏᴡɴ Mᴇssᴀɢᴇ. Pʟᴇᴀsᴇ Usᴇ Tʜᴇ /start Cᴏᴍᴍᴀɴᴅ.")
-
+    sticker_file_id = "CAACAgUAAxkBAAEn47VlY6Q_MPqgRtZnGGpc36FeN7TJJwACyQwAAmj_IFcsiFi0kiNUgDME"
+    bot.send_sticker(message.chat.id, sticker_file_id)
+    bot.delete_message(chat_id=message.chat.id, message_id=message.message_id)
 bot.polling()
