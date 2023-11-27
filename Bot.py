@@ -29,7 +29,7 @@ def project_button_callback(call):
     updated_keyboard.row(types.InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="back_button"))
     
     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                          text="🔗 Hᴇʀᴇ Aʀᴇ Sᴏᴍᴇ ʟɪɴᴋs:", reply_markup=updated_keyboard)
+                          text="/🗂️ Pʀᴏᴊᴇᴄᴛ", reply_markup=updated_keyboard)
 
 
 
