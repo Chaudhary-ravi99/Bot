@@ -13,7 +13,7 @@ def start(message):
                 types.InlineKeyboardButton("😺 GɪᴛHᴜʙ", url="https://github.com/jinix6"))
     keyboard.row(types.InlineKeyboardButton("🚀 Tᴇʟᴇɢʀᴀᴍ", url="https://t.me/Jinxx6_6_real"),
                 types.InlineKeyboardButton("🚀 Tᴇʟᴇɢʀᴀᴍ 2", url="https://t.me/crystal_v1"))
-    project_button = types.InlineKeyboardButton("🗂️ Pʀᴏᴊᴇᴄᴛ", callback_data="project_button")
+    project_button = types.InlineKeyboardButton("🗂️ Pʀᴏᴊᴇᴄᴛ, Oᴛʜᴇʀs Fɪʟᴇs", callback_data="project_button")
     keyboard.row(project_button)
 
     bot.send_message(message.chat.id, '🔗 Hᴇʀᴇ Aʀᴇ Sᴏᴍᴇ ʟɪɴᴋs:', reply_markup=keyboard)
@@ -26,10 +26,12 @@ def project_button_callback(call):
     updated_keyboard.row(types.InlineKeyboardButton("🧬 Eɴᴛɪᴛʏ Aʟʟ Bʟᴏᴄᴋ", url="https://t.me/freefirecraftlandgroup/146275"),
                 types.InlineKeyboardButton("🔥 Aʟʟ Bʟᴏᴄᴋs", url="https://youtu.be/2C6DFikY0Bw?si=pZAEvYitBJQsYFZJ"))
                 
+    updated_keyboard.row(types.InlineKeyboardButton("🛠️ Cᴏɴғɪɢ", url="https://t.me/freefirecraftlandgroup/151681"))
+    
     updated_keyboard.row(types.InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="back_button"))
     
     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                          text="/🗂️ Pʀᴏᴊᴇᴄᴛ", reply_markup=updated_keyboard)
+                          text="/🗂️ Pʀᴏᴊᴇᴄᴛ, Oᴛʜᴇʀs Fɪʟᴇs", reply_markup=updated_keyboard)
 
 
 
@@ -41,7 +43,7 @@ def back_button_callback(call):
                           types.InlineKeyboardButton("😺 GɪᴛHᴜʙ", url="https://github.com/jinix6"))
     original_keyboard.row(types.InlineKeyboardButton("🚀 Tᴇʟᴇɢʀᴀᴍ", url="https://t.me/Jinxx6_6_real"),
                           types.InlineKeyboardButton("🚀 Tᴇʟᴇɢʀᴀᴍ 2", url="https://t.me/crystal_v1"))
-    original_keyboard.row(types.InlineKeyboardButton("🗂️ Pʀᴏᴊᴇᴄᴛ", callback_data="project_button"))
+    original_keyboard.row(types.InlineKeyboardButton("🗂️ Pʀᴏᴊᴇᴄᴛ, Oᴛʜᴇʀs Fɪʟᴇs", callback_data="project_button"))
 
     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                           text="🔗 Hᴇʀᴇ Aʀᴇ Sᴏᴍᴇ ʟɪɴᴋs:", reply_markup=original_keyboard)
